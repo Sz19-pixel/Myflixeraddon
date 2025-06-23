@@ -1,7 +1,7 @@
 const cheerio = require('cheerio');
 const { BASE_URL, makeRequest } = require('../lib/utils');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
     try {
         const { type, id } = req.query;
         
@@ -102,4 +102,4 @@ export default async function handler(req, res) {
             error: 'Failed to fetch metadata'
         });
     }
-}
+};
