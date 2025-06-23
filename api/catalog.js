@@ -1,6 +1,6 @@
 const { BASE_URL, makeRequest, parseSearchResults, parseUrlParams } = require('../lib/utils');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
     try {
         const { type, id } = req.query;
         const extraStr = req.query.extra || '';
@@ -44,4 +44,4 @@ export default async function handler(req, res) {
             metas: [] 
         });
     }
-} 
+};
