@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/manifest.json",
+      "destination": "/api/manifest"
+    },
+    {
+      "source": "/configure",
+      "destination": "/api/configure"
+    },
+    {
+      "source": "/catalog/:type/:id",
+      "destination": "/api/catalog?type=$type&id=$id"
+    },
+    {
+      "source": "/catalog/:type/:id/:extra",
+      "destination": "/api/catalog?type=$type&id=$id&extra=$extra"
+    },
+    {
+      "source": "/meta/:type/:id",
+      "destination": "/api/meta?type=$type&id=$id"
+    },
+    {
+      "source": "/stream/:type/:id",
+      "destination": "/api/stream?type=$type&id=$id"
+    }
+  ]
+}
