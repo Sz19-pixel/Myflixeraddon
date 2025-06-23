@@ -1,0 +1,57 @@
+{
+  "functions": {
+    "api/*.js": {
+      "runtime": "nodejs18.x",
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/manifest.json",
+      "destination": "/api/manifest"
+    },
+    {
+      "source": "/configure",
+      "destination": "/api/configure"
+    },
+    {
+      "source": "/catalog/:type/:id",
+      "destination": "/api/catalog?type=$type&id=$id"
+    },
+    {
+      "source": "/catalog/:type/:id/:extra",
+      "destination": "/api/catalog?type=$type&id=$id&extra=$extra"
+    },
+    {
+      "source": "/meta/:type/:id",
+      "destination": "/api/meta?type=$type&id=$id"
+    },
+    {
+      "source": "/stream/:type/:id",
+      "destination": "/api/stream?type=$type&id=$id"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PUT, DELETE, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ]
+} 
