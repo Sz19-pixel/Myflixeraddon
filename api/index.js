@@ -1,5 +1,5 @@
 // Main entry point - redirects to manifest
-export default function handler(req, res) {
+module.exports = function handler(req, res) {
     res.status(200).json({
         message: 'MyFlixer Stremio Addon',
         manifest: `${req.headers.host ? `https://${req.headers.host}` : 'http://localhost:3000'}/manifest.json`,
@@ -11,4 +11,4 @@ export default function handler(req, res) {
             stream: '/stream/{type}/{id}'
         }
     });
-}
+};
