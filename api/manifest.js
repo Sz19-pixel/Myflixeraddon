@@ -1,5 +1,5 @@
 // Manifest endpoint
-export default function handler(req, res) {
+module.exports = function handler(req, res) {
     const manifest = {
         id: 'myflixer.stremio.addon',
         version: '1.0.0',
@@ -32,4 +32,4 @@ export default function handler(req, res) {
     };
 
     res.status(200).json(manifest);
-}
+};
