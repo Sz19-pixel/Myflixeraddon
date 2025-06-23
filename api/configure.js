@@ -1,5 +1,5 @@
 // Configuration page endpoint
-export default function handler(req, res) {
+module.exports = function handler(req, res) {
     const baseUrl = req.headers.host ? `https://${req.headers.host}` : 'http://localhost:3000';
     
     const html = `
@@ -99,4 +99,4 @@ export default function handler(req, res) {
     
     res.setHeader('Content-Type', 'text/html');
     res.status(200).send(html);
-} 
+};
