@@ -1,4 +1,3 @@
-// Manifest endpoint
 module.exports = function handler(req, res) {
     const manifest = {
         id: 'myflixer.stremio.addon',
@@ -28,7 +27,7 @@ module.exports = function handler(req, res) {
                 ]
             }
         ],
-        idPrefixes: ['myflixer:']
+        idPrefixes: ['tt']  // ✅ التصحيح هنا
     };
 
     res.status(200).json(manifest);
